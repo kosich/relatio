@@ -1,10 +1,34 @@
 {
-  "nodes":[
-    {"name":"Myriel","group":1},
-    {"name":"Napoleon","group":1}
-  ],
-  "links":[
-    {"source":1,"target":0,"value":1}
-  ]
+    "title": "Hell Yeah",
+    "nodes": [
+        {
+            "id":0,
+            "x":100,
+            "y":300,
+            "title":"Napoleon",
+            "desc": "a French military and political leader who rose to prominence during the French Revolution and its associated wars"
+        },
+        {
+            "id":1,
+            "x":200,
+            "y":100,
+            "title":"Alexander the Great",
+            "desc": "He spent most of his ruling years on an unprecedented military campaign through Asia and northeast Africa, until by the age of thirty he had created one of the largest empires of the ancient world, stretching from Greece to Egypt and into northwest India. He was undefeated in battle and is considered one of history's most successful military commanders."
+        },
+        {
+            "id":2,
+            "x":300,
+            "y":150,
+            "title":"Albert Einstein",
+            "desc": "He developed the general theory of relativity, one of the two pillars of modern physics (alongside quantum mechanics). Einstein's work is also known for its influence on the philosophy of science. Einstein is best known in popular culture for his mass–energy equivalence formula E = mc2 (which has been dubbed \"the world's most famous equation\"). He received the 1921 Nobel Prize in Physics for his \"services to theoretical physics\", in particular his discovery of the law of the photoelectric effect, a pivotal step in the evolution of quantum theory."
+        }
+    ],
+    "links":[
+        {
+            "x1":100,"y1":300,"x2":200,"y2":100
+        },
+        {
+            "x1":200,"y1":100,"x2":300,"y2":150
+        }
+    ]
 }
-
