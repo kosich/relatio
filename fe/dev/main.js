@@ -54,6 +54,14 @@ App.CurrentUserView = Backbone.View.extend({
             .attr('dx', 11)
             .attr('dy', '.35em');
 
+        node.append("foreignObject")
+            .attr("width", 480)
+            .attr("height", 500)
+            .attr('dx', 11)
+            .attr('dy', '5em')
+            .append("xhtml:div")
+            .html(function(d){ return d.desc; });
+
         node.append('image')
             .attr('xlink:href', 'https://github.com/favicon.ico')
             .attr('x', -8)
