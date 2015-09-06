@@ -38,7 +38,7 @@ function compile(watch) {
         .pipe(source('build.js'))
         .pipe(buffer())
         .pipe(sourcemaps.init({ loadMaps: true }))
-        .pipe(sourcemaps.write(PATHS.maps))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(PATHS.build));
     }
 
@@ -57,7 +57,7 @@ gulp.task('watch:sass', function () {
     .pipe(watch(path(PATHS.scss.watch)))
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
-    .pipe(sourcemaps.write(PATHS.maps))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(PATHS.build));
 });
 
