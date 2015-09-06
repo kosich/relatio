@@ -29,17 +29,6 @@ App.CurrentUserView = Backbone.View.extend({
             .attr('width', width)
             .attr('height', height);
 
-        var links = svg
-            .selectAll('.link')
-            .data(links)
-            .enter()
-            .append('line')
-            .attr('class', 'link')
-            .attr('x1', function(d){ return d.x1; })
-            .attr('y1', function(d){ return d.y1; })
-            .attr('x2', function(d){ return d.x2; })
-            .attr('y2', function(d){ return d.y2; });
-
         var node = svg
             .selectAll('.node')
             .data(nodes)
@@ -68,6 +57,29 @@ App.CurrentUserView = Backbone.View.extend({
             .attr('y', -8)
             .attr('width', 16)
             .attr('height', 16);
+
+        var links = svg
+            .selectAll('.link')
+            .data(links)
+            .enter()
+            .append('line')
+            .attr('class', 'link')
+            .attr('x1', function(d){ return getCoordinatesOfNode(d.a).x; })
+            .attr('y1', function(d){ return getCoordinatesOfNode(d.a).y; })
+            .attr('x2', function(d){ return getCoordinatesOfNode(d.o).x; })
+            .attr('y2', function(d){ return getCoordinatesOfNode(d.o).y; });
+
+        function getCoordinatesOfNode(nodeId){
+            var found = nodes.filter(function(node){
+                return node.id === nodeId;
+            });
+
+            if (!found.length){
+                throw Error('Node with id `' + nodeid + '` wasn\'t found')
+            }
+            
+            return found[0];
+        }
 
     }
 });
