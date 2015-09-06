@@ -2,68 +2,61 @@
     "title": "page of history",
     "nodes": [
         {
-            "x":300,
-            "y":30,
             "title": "Domestic dog",
             "imgUrl": "http://shakacity.com/sites/default/files/dog_0.jpg",
-            "years": "27,000~40,000 BCE"
+            "years": "27,000~40,000 BCE",
+            "time": -3000
         },
         {
             "id":1,
-            "x":200,
-            "y":100,
             "title":"Alexander the Great",
             "years": "20/21 July 356 BC – 10/11 June 323 BC",
+            "time": -356,
             "imgUrl": "http://static.guim.co.uk/sys-images/Guardian/About/General/2013/1/7/1357575540835/Head-of-Alexander-the-Gre-009.jpg",
             "desc": "He spent most of his ruling years on an unprecedented military campaign through Asia and northeast Africa, until by the age of thirty he had created one of the largest empires of the ancient world, stretching from Greece to Egypt and into northwest India. He was undefeated in battle and is considered one of history's most successful military commanders."
         },
         {
-            "x":400,
-            "y":170,
             "title": "Julius Caesar",
             "imgUrl": "http://a2.files.biography.com/image/upload/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTE4MDAzNDEwNDQxMTExMDU0.jpg",
             "years": "July 100 BC – 15 March 44 BC",
+            "time": -50,
             "desc": "a Roman statesman, general and notable author of Latin prose. He played a critical role in the events that led to the demise of the Roman Republic and the rise of the Roman Empire."
         },
         {
-            "x":300,
-            "y":220,
             "title":"Printing press",
             "years": "~1440",
+            "time": 1440,
             "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg/320px-Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg",
             "desc": "A printing press is a device for applying pressure to an inked surface resting upon a print medium (such as paper or cloth), thereby transferring the ink. Typically used for texts, the invention of the printing press is widely regarded as one of the most influential events in the second millennium, ushering in the period of modernity."
         },
         {
-            "x":200,
-            "y":270,
+            "id": 2,
             "title": "Leonardo da Vinci",
             "imgUrl": "http://myhero.com/images/Science/Vinci/g1_u8514_self.jpg",
             "years": "15 April 1452 – 2 May 1519",
+            "time": 1480,
             "desc": "was an Italian polymath. His areas of strength included painting, sculpting, architecture, science, music, mathematics, engineering, invention, anatomy, geology, astronomy, botany, writing, history, and cartography. Leonardo's genius, perhaps more than that of any other figure, epitomized the Renaissance humanist ideal. He is widely considered to be one of the greatest painters of all time and perhaps the most diversely talented person ever to have lived in the Western world. He is often referred to as the Father of paleontology, ichnology and architecture. Sometimes he is credited with the inventions of the parachute, helicopter and tank."
         },
         {
-            "x":400,
-            "y":320,
             "title":"Telescope",
             "years": "1608",
+            "time": 1608,
             "imgUrl": "http://www.crystalinks.com/aug25galileotele.jpg",
             "desc": "is an instrument that aids in the observation of remote objects by collecting electromagnetic radiation (such as visible light)."
         },
         {
             "id":0,
-            "x":100,
-            "y":350,
             "title":"Napoleon",
             "years": "15 August 1769 – 5 May 1821",
+            "time": 1810,
             "imgUrl": "http://a2.files.biography.com/image/upload/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTIwNjA4NjMzMjIxNzExMzcy.jpg",
             "desc": "a French military and political leader who rose to prominence during the French Revolution and its associated wars"
         },
         {
-            "id":2,
-            "x":200,
-            "y":450,
+            "id":3,
             "title":"Albert Einstein",
             "years": "14 March 1879 – 18 April 1955",
+            "time": 1930,
             "imgUrl": "http://images.mentalfloss.com/sites/default/files/styles/article_640x430/public/einstein10_0.jpg",
             "desc": "He developed the general theory of relativity, one of the two pillars of modern physics (alongside quantum mechanics). Einstein's work is also known for its influence on the philosophy of science. Einstein is best known in popular culture for his mass–energy equivalence formula E = mc2 (which has been dubbed \"the world's most famous equation\"). He received the 1921 Nobel Prize in Physics for his \"services to theoretical physics\", in particular his discovery of the law of the photoelectric effect, a pivotal step in the evolution of quantum theory."
         }
@@ -73,6 +66,11 @@
             "a": 1,
             "o": 0,
             "weight": 1
+        },
+        {
+            "a": 2,
+            "o": 3,
+            "weight": 2
         }
     ]
 }

@@ -1,3 +1,5 @@
+import babel_polyfill from 'babel/polyfill';
+
 import Main from './main/main.model.js';
 import MainView from './main/main.view.js';
 
