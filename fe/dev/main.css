@@ -1,13 +1,34 @@
-body{
+html, body{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#main{
     background-color: #E7ECEF;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow:hidden;
 }
 
 .page-title{
+    padding: 0;
+    margin: 0;
+
+    background-color: rgba(231, 236, 239, 0.5);
+    box-shadow: 0 5px 10px rgba(231, 236, 239, .5);
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 50px;
     text-align: center;
     color: #7CA5BD;
 }
-
-
 
 .node {
 }
@@ -17,12 +38,31 @@ body{
 }
 
 .container {
+    display: inline-block;
+    min-width: 200px;
+    width: 400px;
+    padding: 2px 2px 2px 70px;
+    border: 1px solid transparent;
+
+    box-sizing: border-box;
+
+    border-radius: 32px;
 }
 
+.container.selected {
+    background-color: #fafafa; 
+    border: 1px solid #fff;
+}
+
+
 .image {
-    float: left;
     max-height: 64px;
     max-width: 64px;
+    margin-left:-68px;
+    float: left;
+
+    border-radius: 32px;
+
 }
 
 .title {
@@ -33,6 +73,8 @@ body{
     font-size: 23px;
     fill: #222;
     color: #222;
+
+    white-space: nowrap;
 }
 
 .years{
@@ -40,6 +82,7 @@ body{
     font-weight: bold;
     fill: #FF37C0;
     color: #FF37C0;
+    white-space: nowrap;
 }
 
 .desc{

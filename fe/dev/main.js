@@ -34,8 +34,8 @@ App.CurrentUserView = Backbone.View.extend({
         var links = this.model.get('links');
         var nodes = this.model.get('nodes');
 
-        var width = 960,
-            height = 500;
+        var width = this.$el.outerWidth(),
+            height = this.$el.outerHeight();
 
         var svg = d3
             .select('#main')
@@ -77,10 +77,7 @@ App.CurrentUserView = Backbone.View.extend({
             .enter()
             .append('g')
             .attr('class', 'node')
-            .attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')';  })
-            .on('click', function(node){
-                $(this).find('.desc').toggle();
-            });
+            .attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')';  });
 
         var container = node.append("foreignObject")
             .attr('x', -32)
@@ -89,6 +86,9 @@ App.CurrentUserView = Backbone.View.extend({
             .attr("height", 500)
             .append("xhtml:div")
             .attr('class', 'container')
+            .on('click', function(node){
+                $(this).toggleClass('selected');
+            });
 
         container.append('img')
             .attr('src', function(d){ return d.imgUrl; })
@@ -96,7 +96,10 @@ App.CurrentUserView = Backbone.View.extend({
 
         container.append('h2')
             .text(function(d){ return d.title; })
-            .attr('class', 'title');
+            .attr('class', 'title')
+            .on('click', function(node){
+                $(this).parent().find('.desc').toggle();
+            });
 
         container.append('span')
             .text(function(d){ return d.years; })
