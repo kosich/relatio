@@ -1,13 +1,6 @@
-var STROKE_WIDTH = 2;
+const STROKE_WIDTH = 2;
 
-
-var App = {};
-
-App.CurrentUser = Backbone.Model.extend({
-    url: 'data.json'
-});
-
-App.CurrentUserView = Backbone.View.extend({
+let MainView = Backbone.View.extend({
     el: '#main',
 
     initialize: function(){
@@ -112,5 +105,4 @@ App.CurrentUserView = Backbone.View.extend({
     }
 });
 
-new App.CurrentUserView({ model: new App.CurrentUser() });
-
+export default MainView;
