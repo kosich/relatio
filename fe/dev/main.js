@@ -64,47 +64,47 @@ App.CurrentUserView = Backbone.View.extend({
                 return node.id === nodeId;
             });
 
-            if (!found.length){
+            if (!(found.length === 1)){
                 throw Error('Node with id `' + nodeid + '` wasn\'t found')
             }
             
             return found[0];
         }
+
         var node = g
             .selectAll('.node')
             .data(nodes)
             .enter()
             .append('g')
             .attr('class', 'node')
-            .attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')';  });
+            .attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')';  })
+            .on('click', function(node){
+                $(this).find('.desc').toggle();
+            });
 
-        node.append('text')
-            .text(function(d){ return d.title; })
-            .attr('class', 'title')
-            .attr('dx', 40);
-
-        node.append('text')
-            .text(function(d){ return d.years; })
-            .attr('class', 'years')
-            .attr('dx', 40)
-            .attr('dy', '1.1em');
-
-        node.append("foreignObject")
-            .attr('x', 40)
-            .attr('y', '1em')
+        var container = node.append("foreignObject")
+            .attr('x', -32)
+            .attr('y', -32)
             .attr("width", 480)
             .attr("height", 500)
             .append("xhtml:div")
+            .attr('class', 'container')
+
+        container.append('img')
+            .attr('src', function(d){ return d.imgUrl; })
+            .attr('class', 'image');
+
+        container.append('h2')
+            .text(function(d){ return d.title; })
+            .attr('class', 'title');
+
+        container.append('span')
+            .text(function(d){ return d.years; })
+            .attr('class', 'years');
+
+        container.append("div")
             .attr('class', 'desc')
-            .html(function(d){ return d.desc; });
-
-        node.append('image')
-            .attr('xlink:href', function(d){ return d.imgUrl; })
-            .attr('x', -32)
-            .attr('y', -32)
-            .attr('width', 64)
-            .attr('height', 64);
-
+            .text(function(d){ return d.desc; });
 
     }
 });
