@@ -1,23 +1,35 @@
 body{
-    background-color: #999;
+    background-color: #E7ECEF;
 }
+
+.page-title{
+    text-align: center;
+    color: #7CA5BD;
+}
+
+
 
 .node {
 }
 
 .link{
-    stroke: #fff;
+    stroke: #009CFA;
 }
 
 .title {
     font-family: Ubuntu;
     font-weight: normal;
     font-size: 23px;
-    color: black;
+    fill: #222;
+}
+
+.years{
+    font: 14px 'Helvetica Neue';
+    font-weight: bold;
+    fill: #FF37C0;
 }
 
 .desc{
-    max-width: 100px;
     font: 14px 'Helvetica Neue';
-    margin-top: 5em;
+    color: #444;
 }

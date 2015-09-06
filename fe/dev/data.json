@@ -1,11 +1,13 @@
 {
-    "title": "Hell Yeah",
+    "title": "page of history",
     "nodes": [
         {
             "id":0,
             "x":100,
             "y":300,
             "title":"Napoleon",
+            "years": "15 August 1769 – 5 May 1821",
+            "imgUrl": "http://a2.files.biography.com/image/upload/c_fill,cs_srgb,dpr_1.0,g_face,h_300,q_80,w_300/MTIwNjA4NjMzMjIxNzExMzcy.jpg",
             "desc": "a French military and political leader who rose to prominence during the French Revolution and its associated wars"
         },
         {
@@ -13,13 +15,17 @@
             "x":200,
             "y":100,
             "title":"Alexander the Great",
+            "years": "20/21 July 356 BC – 10/11 June 323 BC",
+            "imgUrl": "http://static.guim.co.uk/sys-images/Guardian/About/General/2013/1/7/1357575540835/Head-of-Alexander-the-Gre-009.jpg",
             "desc": "He spent most of his ruling years on an unprecedented military campaign through Asia and northeast Africa, until by the age of thirty he had created one of the largest empires of the ancient world, stretching from Greece to Egypt and into northwest India. He was undefeated in battle and is considered one of history's most successful military commanders."
         },
         {
             "id":2,
-            "x":300,
-            "y":150,
+            "x":400,
+            "y":450,
             "title":"Albert Einstein",
+            "years": "14 March 1879 – 18 April 1955",
+            "imgUrl": "http://images.mentalfloss.com/sites/default/files/styles/article_640x430/public/einstein10_0.jpg",
             "desc": "He developed the general theory of relativity, one of the two pillars of modern physics (alongside quantum mechanics). Einstein's work is also known for its influence on the philosophy of science. Einstein is best known in popular culture for his mass–energy equivalence formula E = mc2 (which has been dubbed \"the world's most famous equation\"). He received the 1921 Nobel Prize in Physics for his \"services to theoretical physics\", in particular his discovery of the law of the photoelectric effect, a pivotal step in the evolution of quantum theory."
         }
     ],
@@ -27,11 +33,6 @@
         {
             "a": 1,
             "o": 0,
-            "weight": 1
-        },
-        {
-            "a": 1,
-            "o": 2,
             "weight": 1
         }
     ]
