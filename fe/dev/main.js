@@ -16,7 +16,20 @@ App.CurrentUserView = Backbone.View.extend({
     },
 
     render: function(){
+        // RENDER PAGE TITLE
         this.$el.html( '<h1 class="page-title">' + this.model.get('title') + '</h1>' );
+
+        // RENDER DATA
+
+        // create the zoom listener
+        var zoomListener = d3.behavior.zoom()
+            .scaleExtent([0.1, 3])
+            .on("zoom", zoomHandler);
+
+        // function for handling zoom event
+        function zoomHandler() {
+            g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+        }
 
         var links = this.model.get('links');
         var nodes = this.model.get('nodes');
@@ -28,9 +41,13 @@ App.CurrentUserView = Backbone.View.extend({
             .select('#main')
             .append('svg')
             .attr('width', width)
-            .attr('height', height);
+            .attr('height', height)
+            .call(zoomListener);
 
-        var links = svg
+        var g = svg
+            .append('g');
+
+        var links = g
             .selectAll('.link')
             .data(links)
             .enter()
@@ -53,7 +70,7 @@ App.CurrentUserView = Backbone.View.extend({
             
             return found[0];
         }
-        var node = svg
+        var node = g
             .selectAll('.node')
             .data(nodes)
             .enter()
