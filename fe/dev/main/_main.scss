@@ -1,5 +1,7 @@
+$bgcolor: #d2d2d2;
+
 #main {
-    background-color: #E7ECEF;
+    background-color: $bgcolor;
     position: absolute;
     left: 0;
     right: 0;
@@ -8,20 +10,17 @@
     overflow:hidden;
 
     .page-title{
-        padding: 0;
+        font: bold 2em 'Helvetica Neue';
         margin: 0;
-
-        background-color: rgba(231, 236, 239, 0.5);
-        box-shadow: 0 5px 10px rgba(231, 236, 239, .5);
-
+        padding: 0;
         position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        height: 50px;
         text-align: center;
-        color: #7CA5BD;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 2em;
+        height: 2em;
+        width: 2em;
     }
+
 
     .link{
         stroke: #009CFA;

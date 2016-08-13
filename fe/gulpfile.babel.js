@@ -52,17 +52,21 @@ function compile(watch) {
     rebundle();
 }
 
-gulp.task('watch:sass', function () {
-    return gulp.src(path(PATHS.scss.app))
-    .pipe(watch(path(PATHS.scss.watch)))
-    .pipe(sourcemaps.init())
+gulp.task('sass', function () {
+  console.log('sass');
+
+  return gulp
+    .src(path(PATHS.scss.app))
     .pipe(sass().on('error', sass.logError))
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest(PATHS.build));
 });
 
-gulp.task('watch:js', function watch() { return compile(true); });
-gulp.task('watch', ['watch:sass', 'watch:js'])
+gulp.task('sass:watch', function () {
+  gulp.watch('./**/*.scss', ['sass']);
+});
+
+gulp.task('js:watch', ()=>compile(true));
+gulp.task('watch', ['sass:watch', 'js:watch'])
 
 gulp.task('default', ['watch']);
 

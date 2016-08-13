@@ -13,7 +13,7 @@ function initialize(){
 
 function render(){
     // RENDER PAGE TITLE
-    this.$el.html(`<h1 class="page-title">${ this.model.get('title') }</h1>`);
+    this.$el.html(`<h1 class="page-title">H</h1>`);
 
     // create the zoom listener
     let zoomListener = d3.behavior.zoom()
@@ -48,9 +48,6 @@ function render(){
         node.x = node.x * _width_gap + (WIDTH - _width_gap)/2 - 200;
         node.y = node.y * _height_gap + (HEIGHT - _height_gap)/2;
     });
-
-
-    console.log(nodes_data);
 
     let links = g
         .selectAll('.link')
