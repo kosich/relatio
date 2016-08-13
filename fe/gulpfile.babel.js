@@ -53,15 +53,13 @@ function compile(watch) {
 }
 
 gulp.task('sass', function () {
-  console.log('sass');
-
   return gulp
     .src(path(PATHS.scss.app))
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest(PATHS.build));
 });
 
-gulp.task('sass:watch', function () {
+gulp.task('sass:watch', ['sass'], function () {
   gulp.watch('./**/*.scss', ['sass']);
 });
 
