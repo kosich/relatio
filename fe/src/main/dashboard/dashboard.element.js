@@ -1,6 +1,7 @@
+import $ from 'jquery';
+
 import node_element from './node/node.element.js';
 import link_element from './link/link.element.js';
-
 
 export default { render };
 

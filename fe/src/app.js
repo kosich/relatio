@@ -1,8 +1,14 @@
-import babel_polyfill from 'babel/polyfill';
+import 'babel-polyfill';
+
+import 'jquery';
+import 'underscore';
+import 'backbone';
+import 'd3';
 
 import Main from './main/main.model.js';
 import MainView from './main/main.view.js';
 
+import './app.scss';
 
 let App = {};
 
