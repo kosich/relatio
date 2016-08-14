@@ -38,7 +38,9 @@ function render($el, data){
     });
 
 
-    link_element.render(g, { links: data.links, nodes: data.nodes });
+    // NOTE: disabling links for now
+    // link_element.render(g, { links: data.links, nodes: data.nodes });
+
     const nodes = node_element
       .render(g, { nodes: data.nodes });
 
@@ -71,9 +73,7 @@ function render($el, data){
     function node_select(node){
       $(this)
           .find('.container')
-          .toggleClass('selected')
-          .find('.desc')
-          .toggle();
+          .toggleClass('selected');
     }
 
 

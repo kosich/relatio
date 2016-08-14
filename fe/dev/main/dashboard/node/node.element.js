@@ -12,8 +12,9 @@ function render(el, data){
         .append('foreignObject')
         .attr('x', d=>d.x)
         .attr('y', d=>d.y)
-        .attr('width', 400)
-        .attr('height', 200);
+        .attr('width', 64)
+        .attr('height', 64);
+
 
     let container = nodes
         .append('xhtml:div')
@@ -23,15 +24,22 @@ function render(el, data){
         .attr('src', d=>d.imgUrl)
         .attr('class', 'image');
 
-    container.append('h2')
+    let wrapper = container
+        .append('xhtml:div')
+        .attr('class', 'wrapper');
+
+    wrapper
+        .append('h2')
         .text(d=>d.title)
         .attr('class', 'title');
 
-    container.append('span')
+    wrapper
+        .append('span')
         .text(d=>d.years)
         .attr('class', 'years');
 
-    container.append('div')
+    wrapper
+        .append('div')
         .attr('class', 'desc')
         .text(d=>d.desc);
 

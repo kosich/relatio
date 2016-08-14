@@ -1,61 +1,65 @@
 .node {
-    &.expanded .desc{
-        display: block;
-    }
 
     .container {
         display: inline-block;
-        min-width: 200px;
-        max-width: 400px;
-        padding: 2px 20px 10px 75px;
         border: 1px solid transparent;
+        padding: 2px;
         box-sizing: border-box;
-        border-radius: 32px 5px 5px 5px;
+        border-radius: 5px;
         font-family: 'Helvetica Neue';
 
         &.selected {
+            min-width: 200px;
+            max-width: 400px;
             background-color: #fafafa; 
             border: 1px solid #fff;
+
+            .wrapper {
+                display: block;
+            }
         }
 
         .image {
+            float: left;
             max-height: 64px;
             max-width: 64px;
-            margin-left:-73px;
-            float: left;
-            border-radius: 32px;
+            border-radius: 5px;
         }
 
-        .title {
-            padding: 0;
-            margin: 0;
-            font-weight: normal;
-            font-size: 23px;
-            fill: #222;
-            color: #222;
+        .wrapper {
+            display: none;
+            margin: 0 10px 10px 74px;
 
-            white-space: nowrap;
-        }
+            .title {
+                padding: 0;
+                margin: 0;
+                font-weight: normal;
+                font-size: 23px;
+                fill: #222;
+                color: #222;
 
-        .years{
-            font: 14px 'Helvetica Neue';
-            font-weight: bold;
-            fill: #FF37C0;
-            color: #FF37C0;
-            white-space: nowrap;
-        }
-
-        .desc{
-            &::first-letter {
-                padding-left: 1em;
+                white-space: nowrap;
             }
 
-            padding-top: 0.5em;
-            font: 14px 'Helvetica Neue';
-            color: #444;
-            display:none;
-            text-align: justify;
+            .years{
+                font: 14px 'Helvetica Neue';
+                font-weight: bold;
+                fill: #FF37C0;
+                color: #FF37C0;
+                white-space: nowrap;
+            }
+
+            .desc{
+                &::first-letter {
+                    padding-left: 1em;
+                }
+                padding-top: 0.5em;
+                font: 14px 'Helvetica Neue';
+                color: #444;
+                text-align: justify;
+            }
         }
+
 
     }
 }
