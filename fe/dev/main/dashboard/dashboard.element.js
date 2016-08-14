@@ -39,6 +39,42 @@ function render($el, data){
 
 
     link_element.render(g, { links: data.links, nodes: data.nodes });
-    node_element.render(g, { nodes: data.nodes });
+    const nodes = node_element
+      .render(g, { nodes: data.nodes });
+
+
+    const drag = d3.behavior.drag()
+      .origin(function(d) { return d; })
+      .on('dragstart', dragstarted)
+      .on('drag', dragged)
+      .on('dragend', dragended);
+
+    nodes
+      .on('click', node_select)
+      .call(drag);
+
+    function dragstarted(d) {
+      d3.event.sourceEvent.stopPropagation();
+      d3.select(this).classed('dragging', true);
+    }
+
+    function dragged(d) {
+      d3.select(this)
+        .attr('x', d.x = d3.event.x)
+        .attr('y', d.y = d3.event.y);
+    }
+
+    function dragended(d) {
+      d3.select(this).classed('dragging', false);
+    }
+
+    function node_select(node){
+      $(this)
+          .find('.container')
+          .toggleClass('selected')
+          .find('.desc')
+          .toggle();
+    }
+
 
 }
