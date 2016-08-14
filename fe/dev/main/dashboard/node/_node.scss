@@ -1,0 +1,65 @@
+.node {
+
+    .container {
+        display: inline-block;
+        border: 1px solid transparent;
+        padding: 2px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        font-family: 'Helvetica Neue';
+
+        &.selected {
+            min-width: 200px;
+            max-width: 400px;
+            background-color: #fafafa; 
+            border: 1px solid #fff;
+
+            .wrapper {
+                display: block;
+            }
+        }
+
+        .image {
+            float: left;
+            max-height: 64px;
+            max-width: 64px;
+            border-radius: 5px;
+        }
+
+        .wrapper {
+            display: none;
+            margin: 0 10px 10px 74px;
+
+            .title {
+                padding: 0;
+                margin: 0;
+                font-weight: normal;
+                font-size: 23px;
+                fill: #222;
+                color: #222;
+
+                white-space: nowrap;
+            }
+
+            .years{
+                font: 14px 'Helvetica Neue';
+                font-weight: bold;
+                fill: #FF37C0;
+                color: #FF37C0;
+                white-space: nowrap;
+            }
+
+            .desc{
+                &::first-letter {
+                    padding-left: 1em;
+                }
+                padding-top: 0.5em;
+                font: 14px 'Helvetica Neue';
+                color: #444;
+                text-align: justify;
+            }
+        }
+
+
+    }
+}
